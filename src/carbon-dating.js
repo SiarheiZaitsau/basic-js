@@ -17,7 +17,7 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(/* sampleActivity */) {
+function dateSample(sampleActivity) {
   if (
     arguments.length === 0 ||
     typeof sampleActivity !== "string" ||
@@ -26,7 +26,7 @@ function dateSample(/* sampleActivity */) {
   )
     return false;
 
-  const numberSampleActivity = +sampleActivity;
+  const numberSampleActivity = Number(sampleActivity);
   const k = 0.693 / 5730;
   const time = Math.ceil(Math.log(15 / numberSampleActivity) / k);
 
